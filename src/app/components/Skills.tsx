@@ -9,7 +9,6 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
-  FaAndroid,
 } from 'react-icons/fa'
 import {
   SiFlutter,

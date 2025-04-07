@@ -58,7 +58,7 @@ export default function Hero() {
       {/* Centered Text content */}
       <div className="max-w-3xl space-y-4 sm:space-y-6">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">
-          <span className="dark:text-white text-purple-600">Hi, I'm </span>
+          <span className="dark:text-white text-purple-600">Hi, I&apos;m </span>
           <span className="text-primary-light dark:text-primary-dark">JANANI M</span>
         </h1>
         <TypeAnimation
