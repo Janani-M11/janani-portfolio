@@ -7,26 +7,45 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 dark:bg-black dark:text-white transition-colors duration-300;
+  @apply bg-[#f8e1ff] text-[#4b006e] dark:bg-black dark:text-white transition-colors duration-300;
 }
 
-/* Add fallback animation class manually */
-@keyframes bubble {
+section {
+  @apply bg-[#f8e1ff]/60 dark:bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg p-4 my-8;
+}
+
+/* Navbar tweaks for light theme */
+.navbar-light {
+  @apply bg-[#f3c9ff]/70 text-[#4b006e] backdrop-blur-md shadow;
+}
+.navbar-dark {
+  @apply bg-black text-white;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
   0% {
-    transform: translateY(0);
-    opacity: 0.3;
+    transform: scale(0.5) translateY(0) rotate(0deg);
+    opacity: 0.6;
   }
   100% {
-    transform: translateY(-100vh);
+    transform: scale(1.2) translateY(-200px) rotate(180deg);
     opacity: 0;
   }
 }
 
-.animate-bubble {
-  animation: bubble 10s linear infinite;
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d946ef, #a855f7);
+  animation: sparkle 6s linear infinite;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Optional: background spin */
+/* Optional subtle spin (if using floating stars or logos) */
 @keyframes spinSlow {
   0% {
     transform: rotate(0deg);
@@ -38,7 +57,4 @@ body {
 
 .animate-spinSlow {
   animation: spinSlow 60s linear infinite;
-}
-html {
-  scroll-behavior: smooth;
 }

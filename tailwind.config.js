@@ -6,13 +6,13 @@ module.exports = {
     extend: {
       colors: {
         primary: {
+          DEFAULT: '#d946ef',   // bright pink-purple
           light: '#a855f7',
           dark: '#7e22ce',
         },
-        background: {
-          light: '#ffffff',
-          dark: '#000000',
-        },
+        secondary: '#a855f7',   // purple
+        background: '#f8e1ff',  // soft lavender
+        text: '#4b006e',        // deep purple
       },
       keyframes: {
         bubble: {

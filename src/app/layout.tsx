@@ -2,6 +2,7 @@ import '../app/globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import SparkleBackground from './components/SparkleBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,14 +21,15 @@ export default function RootLayout({
       <body
         className={`
           ${inter.className}
-          bg-white text-gray-900
+          bg-[#f8e1ff] text-[#4b006e]
           dark:bg-black dark:text-white
           transition-colors duration-300
-          text-lg leading-relaxed
+          text-lg leading-relaxed relative
         `}
       >
+        <SparkleBackground />
         <Navbar />
-        <main className="pt-24 space-y-12 max-w-7xl mx-auto px-4 md:px-8">
+        <main className="pt-24 space-y-12 max-w-7xl mx-auto px-4 md:px-8 z-10 relative">
           {children}
         </main>
         <Footer />
