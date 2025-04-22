@@ -1,10 +1,18 @@
-'use client';  // Mark the file as a client component
+'use client';
 import React, { useState, useEffect } from 'react';
+
+type Bubble = {
+  left: string;
+  width: string;
+  height: string;
+  animationDelay: string;
+  animationDuration: string;
+};
 
 export default function RocketLoader() {
   const [progress, setProgress] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [bubbles, setBubbles] = useState<any[]>([]);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
     // Rocket progress logic
@@ -19,7 +27,7 @@ export default function RocketLoader() {
       });
     }, 100);
 
-    // Bubble generation logic (runs only in the client-side)
+    // Bubble generation logic
     if (typeof window !== 'undefined') {
       const generatedBubbles = [...Array(40)].map(() => ({
         left: `${Math.random() * 100}%`,
