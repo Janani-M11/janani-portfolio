@@ -7,22 +7,34 @@ html {
 }
 
 body {
-  @apply bg-[#f8e1ff] text-[#4b006e] dark:bg-black dark:text-white transition-colors duration-300;
+  @apply text-[#4b006e] dark:text-white transition-colors duration-300;
+  /* Enhanced saturated light theme gradient */
+  background: linear-gradient(135deg, #00ff9d 0%, #00a8ff 50%, #00ff88 100%);
+}
+
+.dark body {
+  background: #1a202c;
 }
 
 section {
-  @apply bg-[#f8e1ff]/60 dark:bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg p-4 my-8;
+  @apply backdrop-blur-md border border-white/10 rounded-2xl shadow-lg p-6 my-8;
+  background: rgba(255, 255, 255, 0.85);
 }
 
-/* Navbar tweaks for light theme */
+.dark section {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Navbar tweaks */
 .navbar-light {
-  @apply bg-[#f3c9ff]/70 text-[#4b006e] backdrop-blur-md shadow;
-}
-.navbar-dark {
-  @apply bg-black text-white;
+  @apply bg-gradient-to-r from-[#00ff9d] via-[#00a8ff] to-[#00ff88] text-[#4b006e] backdrop-blur-md shadow-lg;
 }
 
-/* Sparkle animation */
+.navbar-dark {
+  @apply bg-gradient-to-r from-[#800080] via-[#4b0082] to-[#800080] text-white;
+}
+
+/* Particle sparkle animation */
 @keyframes sparkle {
   0% {
     transform: scale(0.5) translateY(0) rotate(0deg);
@@ -39,22 +51,44 @@ section {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, #d946ef, #a855f7);
+  background: radial-gradient(circle, #ffffff, #ffffff); /* Light particles for light theme */
   animation: sparkle 6s linear infinite;
   pointer-events: none;
   z-index: -1;
 }
 
-/* Optional subtle spin (if using floating stars or logos) */
-@keyframes spinSlow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+.dark .sparkle {
+  background: radial-gradient(circle, #d946ef, #a855f7); /* Dark particles for dark theme */
+}
+
+/* Additional styling */
+@layer utilities {
+  .animate-gradientBG {
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
   }
 }
 
-.animate-spinSlow {
-  animation: spinSlow 60s linear infinite;
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bubble animation */
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
 }

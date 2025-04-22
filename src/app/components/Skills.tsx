@@ -20,7 +20,6 @@ import {
   SiAndroidstudio,
 } from 'react-icons/si'
 
-
 export default function Skills() {
   const programmingLanguages = [
     { name: 'Java', icon: <FaJava className="text-red-600 text-3xl" /> },
@@ -49,7 +48,8 @@ export default function Skills() {
 
     return (
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-[#3D0C63] dark:text-purple-300 mb-6">{title}</h3>
+        {/* Heading color changes depending on the theme */}
+        <h3 className="text-2xl font-bold text-white dark:text-purple-300 mb-6">{title}</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {skills.map((skill, idx) => (
             <motion.div
@@ -75,10 +75,10 @@ export default function Skills() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       viewport={{ once: true }}
-      className="max-w-6xl mx-auto px-4 sm:px-8 pt-20 pb-28 text-center"
+      className="max-w-6xl mx-auto px-4 sm:px-8 pt-20 pb-28 text-center bg-gradient-to-br from-[#34d399] to-[#3b82f6] dark:bg-black"
     >
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-purple-700 dark:text-[#5A189A] mb-14"
+        className="text-4xl sm:text-5xl font-extrabold text-white dark:text-[#5A189A] mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
