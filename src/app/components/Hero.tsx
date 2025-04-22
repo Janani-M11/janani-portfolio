@@ -5,7 +5,7 @@ import { SiLeetcode } from 'react-icons/si'
 import { MdEmail } from 'react-icons/md'
 import { TypeAnimation } from 'react-type-animation'
 import { HiDownload } from 'react-icons/hi'
-import Link from 'next/link'
+// Removed unused import: Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -46,21 +46,20 @@ export default function Hero() {
           Always eager to explore new technologies, collaborate with others, and create meaningful digital experiences.
         </p>
 
-     {/* Resume Button */}
-     <div className="flex justify-center pt-4">
-        <a
-          href="/JANANI_RESUME_.pdf"  // Path to your resume in the public directory
-          download="JANANI_RESUME" // Forces the download with the name "My_Resume"
-          className="flex items-center gap-2 px-6 py-3 
-            bg-cyan-300 text-white 
-            dark:bg-primary-dark dark:text-white
-            font-semibold rounded-lg shadow-md 
-            hover:scale-105 transition-transform"
-        >
-          <HiDownload className="text-xl" /> Download Resume
-        </a>
-      </div>
-
+        {/* Resume Button */}
+        <div className="flex justify-center pt-4">
+          <a
+            href="/JANANI_RESUME_.pdf"
+            download="JANANI_RESUME"
+            className="flex items-center gap-2 px-6 py-3 
+              bg-cyan-300 text-white 
+              dark:bg-primary-dark dark:text-white
+              font-semibold rounded-lg shadow-md 
+              hover:scale-105 transition-transform"
+          >
+            <HiDownload className="text-xl" /> Download Resume
+          </a>
+        </div>
 
         {/* Social Icons */}
         <div className="flex gap-6 justify-center text-2xl sm:text-3xl pt-6">
@@ -97,6 +96,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }
-
